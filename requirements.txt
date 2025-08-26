@@ -1,0 +1,6 @@
+PyQt5==5.15.9
+
+#to bundle (.exe file) use pyinstaller
+# pip install pyinstaller
+# pyinstaller --onefile --windowed --add-data "COMMANDS.txt;." --add-data "sender_receiver.py;." hercules++.py
+

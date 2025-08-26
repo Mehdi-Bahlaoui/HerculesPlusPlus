@@ -1,0 +1,194 @@
+//MISLANEOUS - INPUT
+*IDN?
+
+MEASure:VOLTage? P5V
+MEASure:VOLTage? P12V
+MEASure:VOLTage? P24V
+MEASure:VOLTage? P24VCS
+
+SYSTem:RESTART
+READ:MAINtenace:MODE?
+SYSTem:TIME:SYNC 1, 6, 16, 2025, 08, 49, 27
+SYSTem:TIME?
+SYSTem:STARTTIME?
+SYSTem:SHUTdown:TIME?
+SYSTem:SHUTdown:CAUSE?
+
+######
+
+//TOWER
+CONTrol:TOWER:STATE?
+
+CONTrol:TOWER:RESET
+
+CONFigure:TOWER normal, 1, 3
+CONTrol:TOWER:STATE normal
+
+CONFigure:TOWER critical, 1, 3
+CONTrol:TOWER:STATE critical
+
+CONFigure:TOWER maintenance, 1, 3
+CONTrol:TOWER:STATE maintenance
+
+CONFigure:TOWER onlycs, 1, 3
+CONTrol:TOWER:STATE onlycs
+
+CONFigure:TOWER TS_5, 1, 3
+CONTrol:TOWER:STATE TS_5
+
+
+
+//FAN1
+CONFigure:FAN1:MODE?
+CONFigure:FAN1:MODE manual
+CONFigure:FAN1:MODE automatic
+
+MEASure:TEMP1?
+
+CONFigure:FAN1:THReshold:START?
+CONFigure:FAN1:THReshold:START <float>
+CONFigure:FAN1:THReshold:STOP?
+CONFigure:FAN1:THReshold:STOP <float>
+
+CONFigure:FAN1:THReshold:WARNing?
+CONFigure:FAN1:THReshold:WARNing 50.0
+CONFigure:FAN1:THReshold:CRITICaL?
+CONFigure:FAN1:THReshold:CRITICaL 70
+
+CONFigure:FAN1:ENABled?
+CONFigure:FAN1:ENABled on
+CONFigure:FAN1:ENABled off
+
+CONTrol:FAN1:STATE?
+CONTrol:FAN1:STATE on
+CONTrol:FAN1:STATE off
+
+MEASure:CURRent? FAN1
+CONFigure:OCP? FAN1
+CONFigure:OCP FAN1, 0.1
+
+
+
+
+
+
+//FAN2
+CONFigure:FAN2:MODE?
+CONFigure:FAN2:MODE manual
+CONFigure:FAN2:MODE automatic
+
+MEASure:TEMP2?
+
+CONFigure:FAN2:THReshold:START?
+CONFigure:FAN2:THReshold:START <float>
+CONFigure:FAN2:THReshold:STOP?
+CONFigure:FAN2:THReshold:STOP <float>
+
+CONFigure:FAN2:THReshold:WARNing?
+CONFigure:FAN2:THReshold:WARNing 50.0
+CONFigure:FAN2:THReshold:CRITICaL?
+CONFigure:FAN2:THReshold:CRITICaL 70
+
+CONFigure:FAN2:ENABled?
+CONFigure:FAN2:ENABled on
+CONFigure:FAN2:ENABled off
+
+CONTrol:FAN2:STATE?
+CONTrol:FAN2:STATE on
+CONTrol:FAN2:STATE off
+
+MEASure:CURRent? FAN2
+CONFigure:OCP? FAN2
+CONFigure:OCP FAN2, 0.1
+
+
+
+
+
+
+//FAN INTERNAL
+CONTrol:FANInternal:STATE?
+CONTrol:FAN2:STATE on
+CONTrol:FAN2:STATE off
+MEASure:TEMPInternal?
+CONFigure:FANInternal:THReshold:WARNing?
+CONFigure:FANInternal:THReshold:WARNing 50.0
+CONFigure:FANInternal:THReshold:CRITICaL?
+CONFigure:FANInternal:THReshold:CRITICaL 70
+MEASure:CURRent? FANINTERN
+CONFigure:OCP? FANINTERN
+CONFigure:OCP FANINTERN,
+
+
+
+
+
+//OUTPUT
+MEASure:CURRent? P5V
+
+CONTRol:OUTPut:STATE? P5V
+CONTrol:OUTPut:STATE P5V, ON
+CONTrol:OUTPut:STATE P5V, OFF
+
+MEASure:CURRent? P12V
+CONTRol:OUTPut:STATE? P12V
+CONTrol:OUTPut:STATE P12V, ON
+CONTrol:OUTPut:STATE P12V, OFF
+
+MEASure:CURRent? P24V
+CONTRol:OUTPut:STATE? P24V
+CONTrol:OUTPut:STATE P24V, ON
+CONTrol:OUTPut:STATE P24V, OFF
+
+MEASure:CURRent? P24VCS
+MEASure:VOLTage? P24VCS
+
+
+//OCP - UVP
+CONFigure:OCP? P5V
+CONFigure:OCP P5V, 1
+
+CONFigure:OCP? P12V
+CONFigure:OCP P12V, 1
+
+CONFigure:OCP? P24V
+CONFigure:OCP P24V, 1
+
+CONFigure:OCP? P24VCS
+CONFigure:OCP P24VCS, 1
+
+CONFigure:UVP? P5V
+CONFigure:UVP P5V, 2
+
+CONFigure:UVP? P12V
+CONFigure:UVP P12V, 10
+
+CONFigure:UVP? P24V
+CONFigure:UVP P24V, 20
+
+CONFigure:UVP? P24VCS
+CONFigure:UVP P24VCS, 20
+
+
+
+
+
+//NETWORK
+SYSTem:COMMunicate:NETwork:SUBNet?
+SYSTem:COMMunicate:NETwork:SUBNet "x.x.x.x"
+
+SYSTem:COMMunicate:NETwork:ADDRess?
+SYSTem:COMMunicate:NETwork:ADDRess "169.254.12.25"
+
+SYSTem:COMMunicate:NETwork:DHCP?
+SYSTem:COMMunicate:NETwork:DHCP on
+SYSTem:COMMunicate:NETwork:DHCP off
+
+
+
+
+
+//GPIOS
+CONFigure:GPIO:OUTPut <pin>, <mode>
+CONTrol:GPIO:OUTPut <pin>, <on/off>
+CONFigure:GPIO:INPUt <pin>, <mode>
