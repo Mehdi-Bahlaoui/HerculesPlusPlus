@@ -1,7 +1,7 @@
 # Hercules ++ - TCP Network Testing Tool
 
-A simplified PyQt-based TCP network testing utility with 30 command inputs, persistent settings, and colored response display.
-
+A simplified PyQt-based TCP network testing utility with 30 command inputs and colored response display.
+![Hercules ++ Screenshot](images/hercules_screenshot.png)
 ## Features
 
 - **TCP Client Only**: Send messages using TCP protocol (uses sender_receiver.py)
