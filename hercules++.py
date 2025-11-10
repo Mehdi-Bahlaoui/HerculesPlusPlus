@@ -93,7 +93,7 @@ class HerculesPlusPlus(QMainWindow):
     
     def init_ui(self):
         self.setWindowTitle("Hercules++")
-        self.setGeometry(100, 100, 1600, 900)
+        self.setGeometry(100, 100, 1800, 900)
         
         # Set application font size
         font = QFont()

@@ -3,4 +3,5 @@ PyQt5==5.15.9
 #to bundle (.exe file) use pyinstaller
 # pip install pyinstaller
 # pyinstaller --onefile --windowed --add-data "COMMANDS.txt;." --add-data "sender_receiver.py;." hercules++.py
-
+# wILL NOT ON tRONICO pc, FOR SECURITY MEASURES, BUT IF RUN ON OTHER pc EXE FILE will be created in dist/ folder (along WITH some others that you can safely delete)
+# Please note that the current exe file in dist is outdated and it is recommend to run the application NORMALLY from hercules++.py

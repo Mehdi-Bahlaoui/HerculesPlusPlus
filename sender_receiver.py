@@ -1,6 +1,6 @@
 import socket
 
-def send_tcp_request(ip, port, message, timeout=2):
+def send_tcp_request(ip, port, message, timeout=10):
     try:
         # Create TCP socket
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

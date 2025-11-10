@@ -1,20 +1,46 @@
-//MISLANEOUS - INPUT
+//OTHER
 *IDN?
-
-MEASure:VOLTage? P5V
-MEASure:VOLTage? P12V
-MEASure:VOLTage? P24V
-MEASure:VOLTage? P24VCS
+*CLS
+*ESE
+*ESE?
+*ESR?
+*OPC
+*OPC?
+*RST
+*SRE
+*SRE?
+*STB?
+*TST?
+*WAI
 
 SYSTem:RESTART
 READ:MAINtenace:MODE?
+
 SYSTem:TIME:SYNC 1, 6, 16, 2025, 08, 49, 27
 SYSTem:TIME?
 SYSTem:STARTTIME?
 SYSTem:SHUTdown:TIME?
 SYSTem:SHUTdown:CAUSE?
 
-######
+//INPUT - UVP
+MEASure:VOLTage? P5V
+CONFigure:UVP? P5V
+CONFigure:UVP P5V, 2
+
+MEASure:VOLTage? P12V
+CONFigure:UVP? P12V
+CONFigure:UVP P12V, 10
+
+MEASure:VOLTage? P24V
+CONFigure:UVP? P24V
+CONFigure:UVP P24V, 20
+
+MEASure:CURRent? P24VCS
+MEASure:VOLTage? P24VCS
+CONFigure:UVP? P24VCS
+CONFigure:UVP P24VCS, 20
+
+
 
 //TOWER
 CONTrol:TOWER:STATE?
@@ -38,7 +64,10 @@ CONTrol:TOWER:STATE TS_5
 
 
 
-//FAN1
+
+
+
+//FAN1 - OCP
 CONFigure:FAN1:MODE?
 CONFigure:FAN1:MODE manual
 CONFigure:FAN1:MODE automatic
@@ -63,6 +92,7 @@ CONTrol:FAN1:STATE?
 CONTrol:FAN1:STATE on
 CONTrol:FAN1:STATE off
 
+########################
 MEASure:CURRent? FAN1
 CONFigure:OCP? FAN1
 CONFigure:OCP FAN1, 0.1
@@ -72,7 +102,7 @@ CONFigure:OCP FAN1, 0.1
 
 
 
-//FAN2
+//FAN2 - OCP
 CONFigure:FAN2:MODE?
 CONFigure:FAN2:MODE manual
 CONFigure:FAN2:MODE automatic
@@ -97,77 +127,61 @@ CONTrol:FAN2:STATE?
 CONTrol:FAN2:STATE on
 CONTrol:FAN2:STATE off
 
+########################
 MEASure:CURRent? FAN2
 CONFigure:OCP? FAN2
 CONFigure:OCP FAN2, 0.1
 
 
 
-
-
-
-//FAN INTERNAL
+//FAN INTERNAL - OCP
 CONTrol:FANInternal:STATE?
 CONTrol:FAN2:STATE on
 CONTrol:FAN2:STATE off
+
 MEASure:TEMPInternal?
+
 CONFigure:FANInternal:THReshold:WARNing?
 CONFigure:FANInternal:THReshold:WARNing 50.0
 CONFigure:FANInternal:THReshold:CRITICaL?
 CONFigure:FANInternal:THReshold:CRITICaL 70
+
+########################
 MEASure:CURRent? FANINTERN
 CONFigure:OCP? FANINTERN
 CONFigure:OCP FANINTERN,
 
 
-
-
-
-//OUTPUT
-MEASure:CURRent? P5V
+//OUTPUT - OCP
 
 CONTRol:OUTPut:STATE? P5V
 CONTrol:OUTPut:STATE P5V, ON
 CONTrol:OUTPut:STATE P5V, OFF
-
-MEASure:CURRent? P12V
-CONTRol:OUTPut:STATE? P12V
-CONTrol:OUTPut:STATE P12V, ON
-CONTrol:OUTPut:STATE P12V, OFF
-
-MEASure:CURRent? P24V
-CONTRol:OUTPut:STATE? P24V
-CONTrol:OUTPut:STATE P24V, ON
-CONTrol:OUTPut:STATE P24V, OFF
-
-MEASure:CURRent? P24VCS
-MEASure:VOLTage? P24VCS
-
-
-//OCP - UVP
+MEASure:CURRent? P5V
 CONFigure:OCP? P5V
 CONFigure:OCP P5V, 1
 
+
+CONTRol:OUTPut:STATE? P12V
+CONTrol:OUTPut:STATE P12V, ON
+CONTrol:OUTPut:STATE P12V, OFF
+MEASure:CURRent? P12V
 CONFigure:OCP? P12V
 CONFigure:OCP P12V, 1
 
+
+CONTRol:OUTPut:STATE? P24V
+CONTrol:OUTPut:STATE P24V, ON
+CONTrol:OUTPut:STATE P24V, OFF
+MEASure:CURRent? P24V
 CONFigure:OCP? P24V
 CONFigure:OCP P24V, 1
+
 
 CONFigure:OCP? P24VCS
 CONFigure:OCP P24VCS, 1
 
-CONFigure:UVP? P5V
-CONFigure:UVP P5V, 2
 
-CONFigure:UVP? P12V
-CONFigure:UVP P12V, 10
-
-CONFigure:UVP? P24V
-CONFigure:UVP P24V, 20
-
-CONFigure:UVP? P24VCS
-CONFigure:UVP P24VCS, 20
 
 
 
@@ -185,10 +199,8 @@ SYSTem:COMMunicate:NETwork:DHCP on
 SYSTem:COMMunicate:NETwork:DHCP off
 
 
-
-
-
 //GPIOS
 CONFigure:GPIO:OUTPut <pin>, <mode>
 CONTrol:GPIO:OUTPut <pin>, <on/off>
 CONFigure:GPIO:INPUt <pin>, <mode>
+
